@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+<div class="book-detail">
+    <div class="book-left">
+        <div class="book-image">
+            <img src="/image/<%=data.BookID%>.png">
+        </div>
+        <div class="book-choice">
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="bookID" class="add-cart" value="<%= data.BookID %>">
+                <input type="hidden" name="title" class="add-cart" value="<%= data.Title %>">
+                <input type="hidden" name="book_price" class="add-cart" value="<%= data.Book_Price %>">
+                <button type="submit">Add to cart</button>
+            </form>
+        </div>
+    </div>
+    <div class="book-right">
+        <div class="book-info">
+            <div class="book-title">
+                <h3><%=data.Title%></h3> <br/>
+                Publisher : <%= publisher.Pub_Name%> <br>
+                Author : <%= data.Author%> <br>
+                Rate : 5 star
+            </div>
+            <div class="book-price">
+                Price : 20 $
+            </div>
+        </div>
+        <div class="book-feedback">
+            <form action="/book_feedback" method="post">
+                <label for="rate">Rate</label> 
+                <input type="hidden" name="bookid" class="add-cart" value="<%= data.BookID %>">
+                <input class="rate" name="rate_user" id="rate" type="int" placeholder="enter your rate"> 
+                <label for="feedback">feedback</label>
+                <textarea id="feedback_user" name="feedback_user" rows="5" cols="40"></textarea>
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

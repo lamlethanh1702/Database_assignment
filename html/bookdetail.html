@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="inner-logo">
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                    
+                </div>
+                
+                <form action="#" class="inner-form">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input name="keyword" placeholder="Search for the book you want..."/>
+                </form>
+                
+                <nav class="inner-icon">
+                    <ul>
+                        <li>
+                            <a>
+                                <i class="fa-regular fa-note-sticky"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cart.html">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a class="user-icon">
+                                <i class="fa-regular fa-user"></i>
+                            </a>
+                            <div class="inner-user">
+                                <div class="inner-user-info">
+                                    <div class="inner-user-avatar">
+                                        <img src="../assets/image/User_Icon.png" alt="">
+                                    </div>
+                                    <div class="inner-user-name">
+                                        Name
+                                    </div>
+                                    <div class="inner-user-role">
+                                        Member
+                                    </div>
+                                    <div class="inner-update">
+                                        <a href="viewcarthistory.html">
+                                            cart history 
+                                        </a>
+                                    </div>
+                                    <a href="login.html">
+                                        <button>
+                                            Logout 
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                        </button>
+                                    </a>
+                                    
+                                </div>
+                                
+                                <div class="inner-overlay">
+
+                                </div>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="book-detail">
+        <div class="book-left">
+            <div class="book-image">
+                <img src="../assets/image/sherlock.png">
+            </div>
+            <div class="book-choice">
+                <button>
+                    Add to cart
+                </button>
+            </div>
+        </div>
+        <div class="book-right">
+            <div class="book-info">
+                <div class="book-title">
+                    <h3>Sherlock Holmes</h3> <br/>
+                    Publisher : NXB Van Hoc <br>
+                    Author : Conan Doyle <br>
+                    Rate : 5 star
+                </div>
+                <div class="book-price">
+                    Price : 20 $
+                </div>
+            </div>
+            <div class="book-feedback">
+                <form action="#" method="post">
+                    <label for="rate">Rate</label> 
+                    <input class="rate" name="rate" id="rate" type="int" placeholder="enter your rate"> 
+                    <label for="feedback">feedback</label>
+                    <textarea id="feedback" name="feedback" rows="5" cols="40"></textarea>
+                    <button type="submit">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

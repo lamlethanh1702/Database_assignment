@@ -1,0 +1,43 @@
+<%- include("partials/header_login.ejs") %>
+
+<div class="box-login">
+    <h1>Register</h1>
+
+    <form id="form-login" class="form" method="POST" action="/register">
+        <div class="form__group">
+            <label for="username">NAME</label>
+            <input type="text" name="name" id="name" required placeholder="enter name...">
+        </div>
+
+        <div class="form__group">
+            <label for="username">USERNAME</label>
+            <input type="text" name="username" id="username" required placeholder="enter username...">
+        </div>
+
+        <div class="form__group">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password" required placeholder="enter password...">
+        </div>
+
+        <div class="form__group">
+            <label for="email">EMAIL</label>
+            <input type="text" name="email" id="email" required placeholder="enter email...">
+        </div>
+
+        <div class="form__group">
+            <label for="address">ADDRESS</label>
+            <input type="address" name="address" id="address" required placeholder="enter address...">
+        </div>
+
+        <div class="form__group">
+            <label for="contact-number">CONTACT NUMBER</label>
+            <input type="contact-number" name="contact_number" id="contact-number" required placeholder="enter contact number...">
+        </div>
+
+        <button class="form__button">Register</button>
+        <div class="form-bonus">
+            Have a account already? <a href="/login">Login now</a>
+        </div>
+    </form>
+</div>
+<%- include("partials/footer.ejs") %>

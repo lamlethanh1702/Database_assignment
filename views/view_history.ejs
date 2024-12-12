@@ -1,0 +1,37 @@
+<%- include("partials/header_view.ejs") %>
+
+<div class="box-cart container mt-4">
+    <div class="cart-main-title text-center mb-3">
+        <h2>History order</h2>
+    </div>
+    <% if (locals.view_history) {%>
+        <table class="table table-bordered text-center cart-list">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        OrderID
+                    </th>
+                    <th>MemberID</th>
+                    <th>Order date</th>
+                    <th>Total price</th>
+                    
+                </tr>
+            </thead>
+            <% view_history.forEach(order => { %>
+            <tbody>
+                <tr>
+                    <td><%= order.OrderID%></td>
+                    <td><%= order.MemberID%></td>
+                    <td>
+                        <%= order.Order_date%>
+                    </td>
+                    <td>$<%= order.Total_Price%></td>
+                </tr>
+            </tbody>
+            <% })%>
+        </table>
+    <% }%>
+    
+</div>
+
+<%- include("partials/footer.ejs") %>

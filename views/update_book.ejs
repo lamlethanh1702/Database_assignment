@@ -1,0 +1,67 @@
+<%- include("partials/header_update.ejs") %>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Update Book</h1>
+    
+    <!-- Form thêm sách -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5>Insert Book</h5>
+        </div>
+        <div class="card-body">
+            <form action="/update-book" method="post">
+                <div class="mb-3">
+                    <label for="bookID" class="form-label">Book ID</label>
+                    <input type="text" class="form-control" id="bookID" name="bookID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="warehouseID" class="form-label">Warehouse ID</label>
+                    <input type="text" class="form-control" id="warehouseID" name="warehouseID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="author" class="form-label">Author</label>
+                    <input type="text" class="form-control" id="author" name="author" required>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" required>
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category" required>
+                </div>
+                <div class="mb-3">
+                    <label for="publisherID" class="form-label">Publisher ID</label>
+                    <input type="text" class="form-control" id="publisherID" name="publisherID" required>
+                </div>
+                <div class="mb-3">
+                    <label for="publisherID" class="form-label">Quantity</label>
+                    <input type="text" class="form-control" id="quantity" name="quantity" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Insert</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Form xóa sách -->
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <h5>Delete Book</h5>
+        </div>
+        <div class="card-body">
+            <form action="/delete-book" method="post">
+                <div class="mb-3">
+                    <label for="deleteBookID" class="form-label">Book ID</label>
+                    <input type="text" class="form-control" id="delete_book" name="delete_book" required>
+                </div>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer_update.ejs") %>

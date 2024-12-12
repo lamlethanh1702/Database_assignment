@@ -1,0 +1,103 @@
+<%- include("partials/header.ejs") %>
+
+<div class="main">
+    <div class="container">
+        <div class="inner-wrap">
+            <div class="inner-left">
+                <form action="/categories" method="post" class="inner-form" id="categoryForm">
+                    <p>Choose category</p>
+                   <input type="radio" name="category" id="fantasy" value="fantasy">
+                    
+                    <label for="fantasy">fantasy</label>
+                    <br />
+                    <input type="radio" name="category" id="novel" value="novel">
+                    <label for="novel">novel</label>
+                    <br />
+                    <input type="radio" name="category" id="detective" value="detective">
+                    <label for="detective">detective</label>
+                    <hr style="border: 1px solid black; margin: 10px 0px;"/>
+                    
+                    <input type="radio" name="category" id="increasing price" value="increasing price">
+                    <label for="increasing price">increasing price</label>
+                    <br/>
+                    <input type="radio" name="category" id="decreasing_price" value="decreasing_price">
+                    <label for="decreasing_price">decreasing price</label>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>                   
+            </div>
+            <div class="inner-right">
+                <div class="inner-trending">
+                    <div class="inner-main-title">
+                        Trending
+                    </div>
+                    <div class="inner-book-list">
+                        <% if (locals.books) {%>
+                            <% books.forEach(book => { %>
+        
+                                <div class="product-item">
+                                    <div class="inner-image">
+                                        <a href="/book-detail/<%= book.BookID%>">
+                                            <img  src="/image/<%=book.BookID%>.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="inner-content">
+                                        <h3 class="inner-title">
+                                            <a href="/book-detail/<%= book.BookID%>" ><%= book.Title %></a>
+                                        </h3>
+                                        <div class="inner-price">
+                                            $<%=book.Book_Price %>
+                                        </div>
+                                        <div class="inner-rate">
+                                            <%=book.Author %>
+                                        </div>
+                                        <br>
+                                        
+                                    </div>     
+                                </div>
+                            
+                            <% }); 
+                        }%>
+                        
+                        
+                    </div>
+                </div>
+                <div class="inner-new">
+                    <div class="inner-main-title">
+                        New arrivals
+                    </div>
+                    <div class="inner-book-list">
+                        <% if (locals.new_arrivals) {
+                             new_arrivals.forEach(new_arrival => { %>
+                                <div class="product-item">
+                                    <div class="inner-image">
+                                        <a href="/book-detail/<%= new_arrival.BookID%>">
+                                            <img  src="/image/<%=new_arrival.BookID%>.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="inner-content">
+                                        <h3 class="inner-title">
+                                            <a href="/book-detail/<%= new_arrival.BookID%>" ><%= new_arrival.Title %></a>
+                                        </h3>
+                                        <div class="inner-price">
+                                            $<%=new_arrival.Book_Price %>
+                                        </div>
+                                        <div class="inner-rate">
+                                            <%=new_arrival.Author %>
+                                        </div>
+                                        <br>
+                                        
+                                    </div>     
+                                </div>
+                            <% }); 
+                        }%>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

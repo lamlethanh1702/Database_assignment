@@ -1,0 +1,58 @@
+<%- include("partials/header_cart.ejs") %>
+
+<div class="box-cart container mt-4">
+    <div class="cart-main-title text-center mb-3">
+        <h2>Cart</h2>
+    </div>
+    <button class="button-delete btn btn-danger btn-sm">
+        Delete cart
+    </button>
+    <% if (locals.carts) {%>
+        <table class="table table-bordered text-center cart-list">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Book image
+                    </th>
+                    <th>Book Title</th>
+                    <th>Book Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% carts.forEach(cart => { %>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Book Image" class="img-thumbnail"></td>
+                        <td><%= cart.Title %></td>
+                        <td class="price"><%= cart.Book_Price %>$</td>
+                        <td>
+                            <button class="btn btn-outline-secondary btn-sm">-</button>
+                            <span class="quantity px-2">1</span>
+                            <button class="btn btn-outline-secondary btn-sm">+</button>
+                        </td>
+                        <td class="subtotal"><%= cart.Book_Price %>$</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                <% }); %>
+                
+                
+    
+            </tbody>
+        </table>
+        
+    <%}%>
+    
+    <form action action="/submit-cart" method="POST">
+        <input type="hidden" name="total" id="total">
+        <button type="submit" id="checkout-btn" class="btn btn-success">Checkout</button>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

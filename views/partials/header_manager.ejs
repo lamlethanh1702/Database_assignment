@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="inner-logo">
+                    <a href="/admin">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                    
+                </div>
+                
+                <form action="#" class="inner-form">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input name="keyword" placeholder="Search for the book you want..."/>
+                </form>
+                
+                <nav class="inner-icon">
+                    <ul>
+                        <li>
+                            <a>
+                                <i class="fa-regular fa-note-sticky"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/updatebook">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a class="user-icon">
+                                <i class="fa-regular fa-user"></i>
+                            </a>
+                            <div class="inner-user">
+                                <div class="inner-user-info">
+                                    <%if (content_btn === 'Log-out') {%>
+                                        <div class="inner-user-avatar">
+                                            <img src="/image/User_Icon.png" alt="">
+                                        </div>
+                                        <div class="inner-user-name">
+                                            Name: <%= user_name%>
+                                        </div>
+                                        <div class="inner-user-role">
+                                            <%= roll%>
+                                        </div>
+                                        <div class="inner-update">
+                                            <a href="/view_order">
+                                                history 
+                                            </a>
+                                        </div>
+                                    <%}%>
+                                    
+                                    <a href="/login">
+                                        <button>
+                                            <%= content_btn%>
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                
+                                <div class="inner-overlay">
+
+                                </div>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>

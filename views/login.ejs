@@ -1,0 +1,26 @@
+<%- include("partials/header_login.ejs") %>
+
+<div class="box-login">
+    <h1>Login</h1>
+
+    <form id="form-login" class="form" method="POST" action="/login">
+    <div class="form__group">
+        <label for="username">USERNAME</label>
+        <input type="text" name="username" id="username" required placeholder="enter username...">
+    </div>
+
+    <div class="form__group">
+        <label for="password">PASSWORD</label>
+        <input type="password" name="password" id="password" required placeholder="enter password...">
+    </div>
+
+    <button class="form__button" type="submit">Login</button>
+    <div class="form-bonus">
+        Don't have a account? <a href="/register">Register now</a>
+    </div>
+    </form>
+    <% if (content_error != '') { %>
+        <div class="error-message" style="color: red;"><%= content_error %></div>
+    <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
